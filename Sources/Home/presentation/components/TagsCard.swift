@@ -1,20 +1,33 @@
 //
-//  SwiftUIView.swift
-//  
+//  TagsCard.swift
+//  gemmu
 //
-//  Created by Akashaka on 24/02/22.
+//  Created by Akashaka on 09/02/22.
 //
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct TagsCard: View {
+    var text: String
+    var fontSize: CGFloat = 12.0
+    var bgColor: Color = Color.green
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Text(text)
+                .font(.system(size: fontSize, weight: .regular))
+                .lineLimit(2)
+                .frame(minWidth: 20, maxWidth: 64, alignment: .center)
+                .foregroundColor(.white)
+                .padding(5)
+                .background(bgColor)
+                .cornerRadius(5)
+        }
+
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct TagsCard_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView()
+        TagsCard(text: "tags")
     }
 }
