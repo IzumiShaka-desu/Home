@@ -5,7 +5,7 @@
 //  Created by Akashaka on 09/02/22.
 //
 // MARK: - GamesResponse
-struct GamesResponse: Codable {
+public struct GamesResponse: Codable {
     let count: Int
     let next: String
     let results: [GameItem]
@@ -14,7 +14,7 @@ struct GamesResponse: Codable {
     let gamesResponseDescription: String?
     let nofollowCollections: [String]?
 
-    enum CodingKeys: String, CodingKey {
+  public    enum CodingKeys: String, CodingKey {
         case count, next, results
         case seoTitle = "seo_title"
         case seoDescription = "seo_description"
@@ -25,8 +25,8 @@ struct GamesResponse: Codable {
         case nofollowCollections = "nofollow_collections"
     }
 }
-extension GamesResponse {
-  func toEntity() -> GamesEntity {
+public extension GamesResponse {
+  public  func toEntity() -> GamesEntity {
     return GamesEntity(next: self.next, results: self.results.map({$0.toEntity()}))
   }
 }

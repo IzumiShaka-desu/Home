@@ -4,10 +4,10 @@
 //
 //  Created by Akashaka on 15/02/22.
 //
-struct GameItemEntity: Equatable, Identifiable {
-  let id: Int
-  let name: String
-  let imageUrl: String
-  let released: String
-  let genres: [String]
+public struct GameItemEntity: Equatable, Identifiable {
+  public let id: Int
+  public  let name: String
+  public let imageUrl: String
+  public let released: String
+  public let genres: [String]
 }

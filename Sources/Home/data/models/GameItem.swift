@@ -4,7 +4,7 @@
 //
 //  Created by Akashaka on 09/02/22.
 //
-struct GameItem: Codable {
+public struct GameItem: Codable {
   let id: Int
   let slug, name, released: String?
   let tba: Bool?
@@ -25,7 +25,7 @@ struct GameItem: Codable {
   let esrbRating: EsrbRating?
   let shortScreenshots: [ShortScreenshot]?
   
-  enum CodingKeys: String, CodingKey {
+  public  enum CodingKeys: String, CodingKey {
     case id, slug, name, released, tba
     case backgroundImage = "background_image"
     case rating
@@ -46,8 +46,8 @@ struct GameItem: Codable {
     case shortScreenshots = "short_screenshots"
   }
 }
-extension GameItem {
-  func toEntity() -> GameItemEntity {
+public extension GameItem {
+  public  func toEntity() -> GameItemEntity {
     return GameItemEntity(
       id: self.id,
       name: self.name ?? "",
@@ -56,14 +56,14 @@ extension GameItem {
       genres: self.extractGenreName()
     )
   }
-  func extractPlatformsImageLink() -> [String] {
+  public  func extractPlatformsImageLink() -> [String] {
     var results: [String]=[]
     for platform in self.platforms {
       results.append(platform.platform.imageBackground)
     }
     return results
   }
-  func extractPlatformsName() -> [String] {
+  public  func extractPlatformsName() -> [String] {
     var results: [String]=[]
     for platform in self.platforms {
       results.append(platform.platform.name)
@@ -71,7 +71,7 @@ extension GameItem {
     return results
   }
   
-  func extractGenreName() -> [String] {
+  public  func extractGenreName() -> [String] {
     var results: [String]=[]
     for genre in self.genres {
       results.append(genre.name)
