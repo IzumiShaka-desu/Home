@@ -26,7 +26,7 @@ public struct GamesResponse: Codable {
     }
 }
 public extension GamesResponse {
-  public  func toEntity() -> GamesEntity {
+  func toEntity() -> GamesEntity {
     return GamesEntity(next: self.next, results: self.results.map({$0.toEntity()}))
   }
 }

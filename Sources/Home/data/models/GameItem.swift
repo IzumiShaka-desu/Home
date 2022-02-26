@@ -47,7 +47,7 @@ public struct GameItem: Codable {
   }
 }
 public extension GameItem {
-  public  func toEntity() -> GameItemEntity {
+  func toEntity() -> GameItemEntity {
     return GameItemEntity(
       id: self.id,
       name: self.name ?? "",
@@ -56,14 +56,14 @@ public extension GameItem {
       genres: self.extractGenreName()
     )
   }
-  public  func extractPlatformsImageLink() -> [String] {
+  func extractPlatformsImageLink() -> [String] {
     var results: [String]=[]
     for platform in self.platforms {
       results.append(platform.platform.imageBackground)
     }
     return results
   }
-  public  func extractPlatformsName() -> [String] {
+  func extractPlatformsName() -> [String] {
     var results: [String]=[]
     for platform in self.platforms {
       results.append(platform.platform.name)
@@ -71,7 +71,7 @@ public extension GameItem {
     return results
   }
   
-  public  func extractGenreName() -> [String] {
+  func extractGenreName() -> [String] {
     var results: [String]=[]
     for genre in self.genres {
       results.append(genre.name)
