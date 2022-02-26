@@ -5,17 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "Home",
-    platforms: [.iOS(.v14),.macOS(.v11)],
+    platforms: [.iOS(.v14), .macOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Home",
-            targets: ["Home"]),
+            targets: ["Home"])
     ],
     dependencies: [
       .package(name: "NetworkImage", url: "https://github.com/gonzalezreal/NetworkImage.git", from: "4.0.0"),
       .package(url: "https://github.com/IzumiShaka-desu/Common.git", .branch("main")),
-      .package(url: "https://github.com/Alamofire/Alamofire.git",from: "5.5.0"),
+      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.5.0")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -27,10 +27,10 @@ let package = Package(
             dependencies: [
               "NetworkImage",
               "Common",
-              "Alamofire",
+              "Alamofire"
             ]),
         .testTarget(
             name: "HomeTests",
-            dependencies: ["Home"]),
+            dependencies: ["Home"])
     ]
 )

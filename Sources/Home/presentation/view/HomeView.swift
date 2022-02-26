@@ -12,7 +12,7 @@ import Common
 
 struct HomeView: View {
   @ObservedObject  var homePresenter: HomePresenter
-  
+
   init(presenter: HomePresenter) {
     self.homePresenter = presenter
     UITableView.appearance().separatorStyle = .none
@@ -68,7 +68,7 @@ struct HomeView: View {
                       homePresenter.getGames()
                     }
                 }.listRowBackground(Color.flatDarkBackground)
-                
+
               } else {
                 ZStack(alignment: .center) {
                   Color.flatDarkCardBackground
@@ -78,11 +78,11 @@ struct HomeView: View {
               }
             }
           }
-           
+
          }
         }
       }
-      
+
     }.padding(0)
   }
 }
@@ -92,7 +92,7 @@ struct HomeView_Previews: PreviewProvider {
     Injectors.sharedInstance.inject()
   }
   static var previews: some View {
-    
+
     HomeView(presenter: Injectors.sharedInstance.homePresenter)
   }
 }

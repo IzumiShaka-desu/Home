@@ -9,16 +9,16 @@ import Combine
 import Foundation
 protocol HomeRepositoryProtocol {
   func getGames(target: String?) -> AnyPublisher<GamesEntity, Error>
-  
+
 }
 public final class HomeRepository: NSObject {
   typealias GamesInstance = (HomeRemoteDataSource) -> HomeRepository
-  
+
   fileprivate let remote: HomeRemoteDataSource
   private init( remote: HomeRemoteDataSource) {
     self.remote = remote
   }
-  
+
   static let sharedInstance: GamesInstance = {remoteRepo in
     return HomeRepository(remote: remoteRepo)
   }
@@ -30,5 +30,5 @@ extension HomeRepository: HomeRepositoryProtocol {
       .map({$0.toEntity()})
       .eraseToAnyPublisher()
   }
-  
+
 }

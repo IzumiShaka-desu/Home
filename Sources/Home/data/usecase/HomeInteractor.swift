@@ -17,11 +17,11 @@ public protocol HomeUseCase {
 public class HomeInteractor: HomeUseCase {
 
   private let repository: HomeRepository
-  
+
   required init(repository: HomeRepository) {
     self.repository = repository
   }
-  
+
   public func getGames(target: String?) -> AnyPublisher<GamesEntity, Error> {
     return repository.getGames(target: target)
   }

@@ -24,7 +24,7 @@ public struct GameItem: Codable {
   let tags: [Genre]?
   let esrbRating: EsrbRating?
   let shortScreenshots: [ShortScreenshot]?
-  
+
   public  enum CodingKeys: String, CodingKey {
     case id, slug, name, released, tba
     case backgroundImage = "background_image"
@@ -70,7 +70,7 @@ public extension GameItem {
     }
     return results
   }
-  
+
   func extractGenreName() -> [String] {
     var results: [String]=[]
     for genre in self.genres {
@@ -78,5 +78,5 @@ public extension GameItem {
     }
     return results
   }
-  
+
 }

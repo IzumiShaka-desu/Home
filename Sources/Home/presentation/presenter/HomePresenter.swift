@@ -9,22 +9,22 @@ import SwiftUI
 import Combine
 
 class HomePresenter: ObservableObject {
-  
+
   private var cancellables: Set<AnyCancellable> = []
   private let router: HomeRouter
   private let homeUseCase: HomeUseCase
-  
+
   @Published var games: [GameItemEntity] = []
   @Published var errorMessage: String = ""
   @Published var isLoading: Bool = true
   @Published var isError: Bool = false
   var next: String?
-  
+
   init(homeUseCase: HomeUseCase, router: HomeRouter) {
     self.homeUseCase = homeUseCase
     self.router = router
   }
-  
+
   func getGames() {
     if next == nil {
       isLoading = true
@@ -46,7 +46,7 @@ class HomePresenter: ObservableObject {
       })
       .store(in: &cancellables)
   }
-  
+
   func linkBuilder<Content: View>(
     for id: Int,
     @ViewBuilder content: () -> Content
@@ -56,5 +56,5 @@ class HomePresenter: ObservableObject {
     .padding(0)
     .buttonStyle(PlainButtonStyle())
   }
-  
+
 }

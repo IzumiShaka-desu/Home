@@ -37,6 +37,5 @@ extension HomeRemoteDataSource: HomeRemoteDataSourceProtocol {
       }
     }.eraseToAnyPublisher()
   }
-  
-  
+
 }
