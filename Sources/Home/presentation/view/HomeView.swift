@@ -16,8 +16,8 @@ struct HomeView: View {
   init(presenter: HomePresenter) {
     self.homePresenter = presenter
     UITableView.appearance().separatorStyle = .none
-    UITableViewCell.appearance().backgroundColor = .flatDarkBackground
-    UITableView.appearance().backgroundColor = .flatDarkBackground
+    UITableViewCell.appearance().backgroundColor = Color.flatDarkBackground
+    UITableView.appearance().backgroundColor = Color.flatDarkBackground
   }
   var body: some View {
     ZStack(alignment: .top) {

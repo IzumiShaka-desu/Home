@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/IzumiShaka-desu/Common.git",
         "state": {
           "branch": "main",
-          "revision": "d29ca1c8e7463c618fb4689a68a5abd8483604c0",
+          "revision": "446b4199c953f9d90dae46e7fe401dcdc28972bc",
           "version": null
         }
       },
@@ -44,6 +44,24 @@
           "branch": null,
           "revision": "77c04cef5651a07ab795f8b4edeb39cb231b2411",
           "version": "1.0.7"
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core",
+        "state": {
+          "branch": null,
+          "revision": "6b81f1a7a2d421f9e0b9e7f04e76bcf736a54409",
+          "version": "11.9.0"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-swift",
+        "state": {
+          "branch": null,
+          "revision": "9dff9f2862240d521ad6ad599541269177ddb993",
+          "version": "10.22.0"
         }
       },
       {
