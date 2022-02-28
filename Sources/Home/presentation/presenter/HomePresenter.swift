@@ -11,7 +11,7 @@ import Combine
 class HomePresenter: ObservableObject {
 
   private var cancellables: Set<AnyCancellable> = []
-  private let router: HomeRouter
+  private let router: HomeRouterBase
   private let homeUseCase: HomeUseCase
 
   @Published var games: [GameItemEntity] = []
@@ -20,7 +20,7 @@ class HomePresenter: ObservableObject {
   @Published var isError: Bool = false
   var next: String?
 
-  init(homeUseCase: HomeUseCase, router: HomeRouter) {
+  init(homeUseCase: HomeUseCase, router: HomeRouterBase) {
     self.homeUseCase = homeUseCase
     self.router = router
   }
