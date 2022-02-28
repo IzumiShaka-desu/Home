@@ -9,13 +9,12 @@ import Combine
 import Foundation
 public protocol HomeRepositoryProtocol {
   func getGames(target: String?) -> AnyPublisher<GamesEntity, Error>
-
 }
 public final class HomeRepository: NSObject {
-  typealias HomeInstance = (HomeRemoteDataSource) -> HomeRepository
+  typealias HomeInstance = (HomeRemoteDataSourceProtocol) -> HomeRepository
 
-  fileprivate let remote: HomeRemoteDataSource
-  private init( remote: HomeRemoteDataSource) {
+  fileprivate let remote: HomeRemoteDataSourceProtocol
+  private init( remote: HomeRemoteDataSourceProtocol) {
     self.remote = remote
   }
 
