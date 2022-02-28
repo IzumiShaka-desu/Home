@@ -22,7 +22,7 @@ public final class HomeRepository: NSObject {
     return HomeRepository(remote: remoteRepo)
   }
 }
-public extension HomeRepository: HomeRepositoryProtocol {
+ extension HomeRepository: HomeRepositoryProtocol {
  public func getGames(target: String?) -> AnyPublisher<GamesEntity, Error> {
     return self.remote
       .getGames(target: target)
