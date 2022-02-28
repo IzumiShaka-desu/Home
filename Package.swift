@@ -13,7 +13,7 @@ let package = Package(
             targets: ["Home"])
     ],
     dependencies: [
-      .package(url: "https://github.com/IzumiShaka-desu/Common.git", .branch("main")),
+      .package(url: "https://github.com/IzumiShaka-desu/Common.git", .branch("main"))
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -23,8 +23,8 @@ let package = Package(
         .target(
             name: "Home",
             dependencies: [
-              "Common",
-           
+              "Common"
+
             ]),
         .testTarget(
             name: "HomeTests",

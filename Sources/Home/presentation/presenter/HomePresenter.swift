@@ -8,19 +8,18 @@
 import SwiftUI
 import Combine
 
-public class HomePresenter: ObservableObject {
+public class HomePresenter<DetailView: View>: ObservableObject {
 
   private var cancellables: Set<AnyCancellable> = []
-  private let router: HomeRouterBase
   private let homeUseCase: HomeUseCase
-
+  let router: ((_ id: Int) -> DetailView)
   @Published var games: [GameItemEntity] = []
   @Published var errorMessage: String = ""
   @Published var isLoading: Bool = true
   @Published var isError: Bool = false
   var next: String?
 
- public init(homeUseCase: HomeUseCase, router: HomeRouterBase) {
+ public init(homeUseCase: HomeUseCase, router: @escaping ((Int) -> DetailView)) {
     self.homeUseCase = homeUseCase
     self.router = router
   }
@@ -52,7 +51,7 @@ public class HomePresenter: ObservableObject {
     @ViewBuilder content: () -> Content
   ) -> some View {
     NavigationLink(
-      destination: router.makeDetailView(for: id)) { content() }
+      destination: self.router(id)) { content() }
     .padding(0)
     .buttonStyle(PlainButtonStyle())
   }

@@ -9,11 +9,12 @@ import SwiftUI
 import Alamofire
 import UIKit
 import Common
+import Detail
 
-public struct HomeView: View {
-  @ObservedObject  var homePresenter: HomePresenter
+public struct HomeView<DetailView: View>: View {
+  @ObservedObject  var homePresenter: HomePresenter<DetailView>
 
- public init(presenter: HomePresenter) {
+ public init(presenter: HomePresenter<DetailView>) {
     self.homePresenter = presenter
     UITableView.appearance().separatorStyle = .none
     UITableViewCell.appearance().backgroundColor = UIColor(Color.flatDarkBackground)
