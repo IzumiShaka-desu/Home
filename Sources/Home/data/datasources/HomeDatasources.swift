@@ -17,10 +17,10 @@ public final class HomeRemoteDataSource: NSObject {
 
   private override init() { }
 
-  static let sharedInstance: HomeRemoteDataSource =  HomeRemoteDataSource()
+ public static let sharedInstance: HomeRemoteDataSource =  HomeRemoteDataSource()
 
 }
-extension HomeRemoteDataSource: HomeRemoteDataSourceProtocol {
+public extension HomeRemoteDataSource: HomeRemoteDataSourceProtocol {
  public func getGames(target: String?) -> AnyPublisher<GamesResponse, Error> {
     return Future<GamesResponse, Error> { completion in
       if let url = API.buildUrl(endpoint: .games) {
