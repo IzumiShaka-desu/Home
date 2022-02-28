@@ -11,7 +11,7 @@ public protocol HomeRepositoryProtocol {
   func getGames(target: String?) -> AnyPublisher<GamesEntity, Error>
 }
 public final class HomeRepository: NSObject {
-  typealias HomeInstance = (HomeRemoteDataSourceProtocol) -> HomeRepository
+  public typealias HomeInstance = (HomeRemoteDataSourceProtocol) -> HomeRepository
 
   fileprivate let remote: HomeRemoteDataSourceProtocol
   private init( remote: HomeRemoteDataSourceProtocol) {
