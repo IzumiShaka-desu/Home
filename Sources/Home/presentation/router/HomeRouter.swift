@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-public class HomeRouter {
+open class HomeRouterBase {
 
- public func makeDetailView(for id: Int) -> some View {
+ open func makeDetailView(for id: Int) -> some View {
 
     return DefaultView()
   }
 }
-struct DefaultView: View {
+open struct DefaultView: View {
   var body: some View {
     HStack {}
   }
