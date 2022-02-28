@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-protocol HomeRepositoryProtocol {
+public protocol HomeRepositoryProtocol {
   func getGames(target: String?) -> AnyPublisher<GamesEntity, Error>
 
 }
@@ -24,7 +24,7 @@ public final class HomeRepository: NSObject {
   }
 }
 extension HomeRepository: HomeRepositoryProtocol {
-  func getGames(target: String?) -> AnyPublisher<GamesEntity, Error> {
+ public func getGames(target: String?) -> AnyPublisher<GamesEntity, Error> {
     return self.remote
       .getGames(target: target)
       .map({$0.toEntity()})
