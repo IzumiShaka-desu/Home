@@ -9,7 +9,6 @@ import SwiftUI
 import Alamofire
 import UIKit
 import Common
-import Detail
 
 public struct HomeView<DetailView: View>: View {
   @ObservedObject  var homePresenter: HomePresenter<DetailView>
