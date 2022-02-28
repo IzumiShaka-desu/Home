@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class HomePresenter: ObservableObject {
+public class HomePresenter: ObservableObject {
 
   private var cancellables: Set<AnyCancellable> = []
   private let router: HomeRouterBase
@@ -20,12 +20,12 @@ class HomePresenter: ObservableObject {
   @Published var isError: Bool = false
   var next: String?
 
-  init(homeUseCase: HomeUseCase, router: HomeRouterBase) {
+ public init(homeUseCase: HomeUseCase, router: HomeRouterBase) {
     self.homeUseCase = homeUseCase
     self.router = router
   }
 
-  func getGames() {
+ public func getGames() {
     if next == nil {
       isLoading = true
     }
