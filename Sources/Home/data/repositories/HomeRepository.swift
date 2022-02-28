@@ -19,11 +19,11 @@ public final class HomeRepository: NSObject {
     self.remote = remote
   }
 
-  static let sharedInstance: GamesInstance = {remoteRepo in
+  public static let sharedInstance: GamesInstance = {remoteRepo in
     return HomeRepository(remote: remoteRepo)
   }
 }
-extension HomeRepository: HomeRepositoryProtocol {
+public extension HomeRepository: HomeRepositoryProtocol {
  public func getGames(target: String?) -> AnyPublisher<GamesEntity, Error> {
     return self.remote
       .getGames(target: target)
