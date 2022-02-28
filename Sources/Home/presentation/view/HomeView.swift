@@ -10,16 +10,16 @@ import Alamofire
 import UIKit
 import Common
 
-struct HomeView: View {
+public struct HomeView: View {
   @ObservedObject  var homePresenter: HomePresenter
 
-  init(presenter: HomePresenter) {
+ public init(presenter: HomePresenter) {
     self.homePresenter = presenter
     UITableView.appearance().separatorStyle = .none
     UITableViewCell.appearance().backgroundColor = UIColor(Color.flatDarkBackground)
     UITableView.appearance().backgroundColor = UIColor(Color.flatDarkBackground)
   }
-  var body: some View {
+public  var body: some View {
     ZStack(alignment: .top) {
       Color.flatDarkBackground.ignoresSafeArea()
       VStack {
@@ -87,13 +87,4 @@ struct HomeView: View {
   }
 }
 
-struct HomeView_Previews: PreviewProvider {
-  init() {
-    Injectors.sharedInstance.inject()
-  }
-  static var previews: some View {
-
-    HomeView(presenter: Injectors.sharedInstance.homePresenter)
-  }
-}
 #endif
