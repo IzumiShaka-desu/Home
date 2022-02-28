@@ -10,10 +10,10 @@ import Alamofire
 import Foundation
 import Common
 
-protocol HomeRemoteDataSourceProtocol: AnyObject {
+public protocol HomeRemoteDataSourceProtocol: AnyObject {
   func getGames(target: String?) -> AnyPublisher<GamesResponse, Error>
 }
-final class HomeRemoteDataSource: NSObject {
+public final class HomeRemoteDataSource: NSObject {
 
   private override init() { }
 
@@ -21,7 +21,7 @@ final class HomeRemoteDataSource: NSObject {
 
 }
 extension HomeRemoteDataSource: HomeRemoteDataSourceProtocol {
-  func getGames(target: String?) -> AnyPublisher<GamesResponse, Error> {
+ public func getGames(target: String?) -> AnyPublisher<GamesResponse, Error> {
     return Future<GamesResponse, Error> { completion in
       if let url = API.buildUrl(endpoint: .games) {
         AF.request(target ?? url)
