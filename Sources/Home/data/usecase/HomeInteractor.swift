@@ -18,7 +18,7 @@ public class HomeInteractor: HomeUseCase {
 
   private let repository: HomeRepository
 
-  required init(repository: HomeRepository) {
+  public init(repository: HomeRepository) {
     self.repository = repository
   }
 
