@@ -12,14 +12,14 @@ public protocol HomeRepositoryProtocol {
 
 }
 public final class HomeRepository: NSObject {
-  typealias GamesInstance = (HomeRemoteDataSource) -> HomeRepository
+  typealias HomeInstance = (HomeRemoteDataSource) -> HomeRepository
 
   fileprivate let remote: HomeRemoteDataSource
   private init( remote: HomeRemoteDataSource) {
     self.remote = remote
   }
 
-  public static let sharedInstance: GamesInstance = {remoteRepo in
+  public static let sharedInstance: HomeInstance = {remoteRepo in
     return HomeRepository(remote: remoteRepo)
   }
 }
