@@ -16,9 +16,9 @@ public protocol HomeUseCase {
 
 public class HomeInteractor: HomeUseCase {
 
-  private let repository: HomeRepository
+  private let repository: HomeRepositoryProtocol
 
-  public init(repository: HomeRepository) {
+  public init(repository: HomeRepositoryProtocol) {
     self.repository = repository
   }
 
